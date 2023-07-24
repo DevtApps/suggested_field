@@ -4,16 +4,6 @@
 Implementação simples de um TextField com sugestões
 
 
-
-
-## Instalação
-
-Instale o SuggestedField adicionando o pacote no arquivo pubspec.yaml
-
-      suggested_field: ^0.0.1
-
-
-    
 ## Demonstração
 
 
