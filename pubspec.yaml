@@ -1,6 +1,6 @@
 name: suggested_field
 description: Implementação simples de um TextField com sugestões para pesquisas simples ou mais complexas, suporta loading para sugestões assíncronas
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/DevtApps/suggested_field
 
 environment:
