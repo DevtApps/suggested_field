@@ -1,15 +1,13 @@
 library suggested_field;
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:suggested_field/suggestion.dart';
 
+
 class SuggestedField extends StatelessWidget {
-  bool loading = false;
-  List<Suggestion> suggestions;
+   bool loading = false;
+   List<Suggestion> suggestions = [];
   Function(Suggestion) onTap;
  
   bool closeOnEmpty;
@@ -36,9 +34,9 @@ class SuggestedField extends StatelessWidget {
 
   void filter(String text) {
     if (text.isEmpty) {
-      if (closeOnEmpty)
+      if (closeOnEmpty) {
         return filtered.clear();
-      else {
+      } else {
         filtered.clear();
         filtered.addAll(suggestions);
       }
@@ -74,7 +72,7 @@ class SuggestedField extends StatelessWidget {
           TextField(
            focusNode: focusNode,
             onChanged: filter,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 contentPadding:
                     EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 hintStyle: TextStyle(color: Colors.grey),
@@ -84,7 +82,7 @@ class SuggestedField extends StatelessWidget {
           ),
           Obx(
             () => AnimatedContainer(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               curve: Curves.ease,
               height: loading
                       ? 60
@@ -93,7 +91,7 @@ class SuggestedField extends StatelessWidget {
                           .toDouble(),
               constraints: BoxConstraints(maxHeight: size.height / 3),
               child: loading
-                  ? Center(
+                  ? const Center(
                       child: CircularProgressIndicator(),
                     )
                   : ListView(
